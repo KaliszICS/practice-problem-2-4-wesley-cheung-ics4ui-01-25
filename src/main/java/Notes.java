@@ -3,21 +3,41 @@ class Notes {
 	public static void main(String[] args) {
 
 		int[] testArray = {5, 9, 1, 2, 3, 5, 7, 8, 2, 3, 14, 356, 25, 8, 26, 8, 3, 5};
-
-
-		for (int i = 0; i < testArray.length - 1; i++) {
-			int smallestIndex = i;
-			for (int j = i + 1; j < testArray.length; j++) {
-				if (testArray[smallestIndex] > testArray[j]) {
-					smallestIndex = j;
+		for (int j = 0; j < testArray.length - 1; j++) {
+			int smallestIndex = j;
+			for (int i = j+1; i < testArray.length; i++) {
+				if (testArray[i] < testArray[smallestIndex]) {
+					smallestIndex = i;
 				}
 			}
-			//we have smallest element
 			//swap
-			int temp = testArray[smallestIndex];
-			testArray[smallestIndex] = testArray[i];
-			testArray[i] = temp;
+			int temp = testArray[j];
+			testArray[j] = testArray[smallestIndex];
+			testArray[smallestIndex] = temp;
 		}
+
+
+
+
+
+
+
+
+
+
+		// for (int i = 0; i < testArray.length - 1; i++) {
+		// 	int smallestIndex = i;
+		// 	for (int j = i + 1; j < testArray.length; j++) {
+		// 		if (testArray[smallestIndex] > testArray[j]) {
+		// 			smallestIndex = j;
+		// 		}
+		// 	}
+		// 	//we have smallest element
+		// 	//swap
+		// 	int temp = testArray[smallestIndex];
+		// 	testArray[smallestIndex] = testArray[i];
+		// 	testArray[i] = temp;
+		// }
 		
 
 		for (int i = 0; i < testArray.length; i++) {
